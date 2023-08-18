@@ -69,12 +69,25 @@ function mediaAritmetica(){
 
     if (media >= 7){
 
-        resultado.textContent = 'APROVADO'
+        alert("APROVADO, SUA MÉDIA FOI: " + media)
+        resultado.textContent=media
 
     }else if (media < 7){
 
-        const nota5 = Number(document.getElementById('nota5').value)
-        
+        const valor5 = prompt("RECUPERAÇÃO, SUA MÉDIA É: " + media + "\nINSIRA SUA NOTA DE EXAME:")
+        const media2 = (media + Number(valor5)) / 2
+
+        if (media2 >= 5){
+
+            alert("APROVADO EM EXAME, SUA MÉDIA FOI: " + media2)
+            resultado.textContent = media2
+
+        }else {
+
+            alert("REPROVADO, SUA MÉDIA FOI: " + media2)
+            resultado.textContent = media2
+
+        }
 
     }
 
