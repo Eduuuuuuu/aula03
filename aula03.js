@@ -3,6 +3,8 @@
 const botaoSomar = document.getElementById('somar')
 const botaoIdentificar = document.getElementById('identificar')
 const botaoMultiplicar = document.getElementById('multiplicar')
+const botaoImparOuPar=document.getElementById('botao-imparOuPar')
+const botaoDiferenca=document.getElementById('botao-diferenca')
 const botaoMedia = document.getElementById('mediaAritmetica')
 
 function somar (){
@@ -57,6 +59,29 @@ function multiplicar() {
 
 }
 
+function imparOuPar(){
+    const valor = Number(document.getElementById('numero-imparOuPar').value)
+    const resultado = document.getElementById('resultado-imparOuPar')
+    if(valor % 2 == 0) {
+        resultado.textContent = 'PAR'
+    }else {
+        resultado.textContent = 'ÍMPAR'
+    }
+}
+
+function diferenca(){
+    const valor1 = Number(document.getElementById('numero-diferenca1').value)
+    const valor2 = Number(document.getElementById('numero-diferenca2').value)
+    const resultado = document.getElementById('resultado-diferenca')
+    if(valor1 > valor2) {
+        const diferenca = valor1 - valor2
+        resultado.textContent = diferenca
+    }else {
+        const diferenca = valor2 - valor1
+        resultado.textContent = diferenca
+    }
+}
+
 function mediaAritmetica(){
 
     const nota1 = Number(document.getElementById('nota1').value)
@@ -96,4 +121,6 @@ function mediaAritmetica(){
 botaoSomar.addEventListener('click', somar)
 botaoIdentificar.addEventListener('click', identificar)
 botaoMultiplicar.addEventListener('click', multiplicar)
+botaoImparOuPar.addEventListener('click', imparOuPar)
+botaoDiferenca.addEventListener('click',diferenca)
 botaoMedia.addEventListener('click', mediaAritmetica)
